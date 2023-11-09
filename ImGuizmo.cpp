@@ -77,23 +77,23 @@ namespace IMGUIZMO_NAMESPACE
 
    void FPU_MatrixF_x_MatrixF(const float* a, const float* b, float* r)
    {
-      r[0] = a[0] * b[0] + a[1] * b[4] + a[2] * b[8] + a[3] * b[12];
-      r[1] = a[0] * b[1] + a[1] * b[5] + a[2] * b[9] + a[3] * b[13];
+      r[0] = a[0] * b[0] + a[1] * b[4] + a[2] * b[8]  + a[3] * b[12];
+      r[1] = a[0] * b[1] + a[1] * b[5] + a[2] * b[9]  + a[3] * b[13];
       r[2] = a[0] * b[2] + a[1] * b[6] + a[2] * b[10] + a[3] * b[14];
       r[3] = a[0] * b[3] + a[1] * b[7] + a[2] * b[11] + a[3] * b[15];
 
-      r[4] = a[4] * b[0] + a[5] * b[4] + a[6] * b[8] + a[7] * b[12];
-      r[5] = a[4] * b[1] + a[5] * b[5] + a[6] * b[9] + a[7] * b[13];
+      r[4] = a[4] * b[0] + a[5] * b[4] + a[6] * b[8]  + a[7] * b[12];
+      r[5] = a[4] * b[1] + a[5] * b[5] + a[6] * b[9]  + a[7] * b[13];
       r[6] = a[4] * b[2] + a[5] * b[6] + a[6] * b[10] + a[7] * b[14];
       r[7] = a[4] * b[3] + a[5] * b[7] + a[6] * b[11] + a[7] * b[15];
 
-      r[8] = a[8] * b[0] + a[9] * b[4] + a[10] * b[8] + a[11] * b[12];
-      r[9] = a[8] * b[1] + a[9] * b[5] + a[10] * b[9] + a[11] * b[13];
+      r[8]  = a[8] * b[0] + a[9] * b[4] + a[10] * b[8]  + a[11] * b[12];
+      r[9]  = a[8] * b[1] + a[9] * b[5] + a[10] * b[9]  + a[11] * b[13];
       r[10] = a[8] * b[2] + a[9] * b[6] + a[10] * b[10] + a[11] * b[14];
       r[11] = a[8] * b[3] + a[9] * b[7] + a[10] * b[11] + a[11] * b[15];
 
-      r[12] = a[12] * b[0] + a[13] * b[4] + a[14] * b[8] + a[15] * b[12];
-      r[13] = a[12] * b[1] + a[13] * b[5] + a[14] * b[9] + a[15] * b[13];
+      r[12] = a[12] * b[0] + a[13] * b[4] + a[14] * b[8]  + a[15] * b[12];
+      r[13] = a[12] * b[1] + a[13] * b[5] + a[14] * b[9]  + a[15] * b[13];
       r[14] = a[12] * b[2] + a[13] * b[6] + a[14] * b[10] + a[15] * b[14];
       r[15] = a[12] * b[3] + a[13] * b[7] + a[14] * b[11] + a[15] * b[15];
    }
@@ -636,32 +636,46 @@ namespace IMGUIZMO_NAMESPACE
 
    Style::Style()
    {
-      // default values
-      TranslationLineThickness   = 3.0f;
-      TranslationLineArrowSize   = 6.0f;
-      RotationLineThickness      = 2.0f;
-      RotationOuterLineThickness = 3.0f;
-      ScaleLineThickness         = 3.0f;
-      ScaleLineCircleSize        = 6.0f;
-      HatchedAxisLineThickness   = 6.0f;
-      CenterCircleSize           = 6.0f;
+/*----Default Values-----------------------------------------------------------------------------------------------------------------------------------*/
 
-      // initialize default colors
-      Colors[DIRECTION_X]           = ImVec4(0.666f, 0.000f, 0.000f, 1.000f);
-      Colors[DIRECTION_Y]           = ImVec4(0.000f, 0.666f, 0.000f, 1.000f);
-      Colors[DIRECTION_Z]           = ImVec4(0.000f, 0.000f, 0.666f, 1.000f);
-      Colors[PLANE_X]               = ImVec4(0.666f, 0.000f, 0.000f, 0.380f);
-      Colors[PLANE_Y]               = ImVec4(0.000f, 0.666f, 0.000f, 0.380f);
-      Colors[PLANE_Z]               = ImVec4(0.000f, 0.000f, 0.666f, 0.380f);
-      Colors[SELECTION]             = ImVec4(1.000f, 0.500f, 0.062f, 0.541f);
+      TranslationLineThickness   = 09.0f;
+      TranslationLineArrowSize   = 12.0f;
+
+      RotationLineThickness      = 10.0f;
+      RotationOuterLineThickness = 12.0f;
+
+      ScaleLineThickness         = 09.0f;
+      ScaleLineCircleSize        = 12.0f;
+
+      HatchedAxisLineThickness   = 00.0f;
+      CenterCircleSize           = 12.0f;
+
+ /*---Initialize Default Colors------------------------------------------------------------------------------------------------------------------------*/
+
+      Colors[DIRECTION_X]           = ImVec4(0.845f, 0.050f, 0.408f, 1.000f);
+      Colors[DIRECTION_Y]           = ImVec4(0.114f, 0.745f, 0.000f, 1.000f);
+      Colors[DIRECTION_Z]           = ImVec4(0.000f, 0.577f, 1.000f, 1.000f);
+
+      Colors[PLANE_X]               = ImVec4(0.845f, 0.050f, 0.408f, 1.000f);
+      Colors[PLANE_Y]               = ImVec4(0.114f, 0.745f, 0.000f, 1.000f);
+      Colors[PLANE_Z]               = ImVec4(0.000f, 0.577f, 1.000f, 1.000f);
+
+      Colors[SELECTION]             = ImVec4(0.945f, 0.577f, 0.114f, 1.000f);
       Colors[INACTIVE]              = ImVec4(0.600f, 0.600f, 0.600f, 0.600f);
-      Colors[TRANSLATION_LINE]      = ImVec4(0.666f, 0.666f, 0.666f, 0.666f);
-      Colors[SCALE_LINE]            = ImVec4(0.250f, 0.250f, 0.250f, 1.000f);
-      Colors[ROTATION_USING_BORDER] = ImVec4(1.000f, 0.500f, 0.062f, 1.000f);
-      Colors[ROTATION_USING_FILL]   = ImVec4(1.000f, 0.500f, 0.062f, 0.500f);
-      Colors[HATCHED_AXIS_LINES]    = ImVec4(0.000f, 0.000f, 0.000f, 0.500f);
+
+      Colors[TRANSLATION_LINE]      = ImVec4(1.000f, 1.000f, 1.000f, 1.000f);
+
+      Colors[SCALE_LINE]            = ImVec4(0.000f, 0.000f, 0.000f, 1.000f);
+
+      Colors[ROTATION_USING_BORDER] = ImVec4(0.945f, 0.577f, 0.114f, 1.000f);
+      Colors[ROTATION_USING_FILL]   = ImVec4(0.945f, 0.577f, 0.114f, 1.000f);
+
+      Colors[HATCHED_AXIS_LINES]    = ImVec4(0.000f, 0.000f, 0.000f, 0.000f);
+
       Colors[TEXT]                  = ImVec4(1.000f, 1.000f, 1.000f, 1.000f);
       Colors[TEXT_SHADOW]           = ImVec4(0.000f, 0.000f, 0.000f, 1.000f);
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------*/
    }
 
    struct Context
@@ -964,7 +978,8 @@ namespace IMGUIZMO_NAMESPACE
 
    void BeginFrame()
    {
-      const ImU32 flags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoInputs | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoBringToFrontOnFocus;
+      const ImU32 flags = ImGuiWindowFlags_NoTitleBar
+          | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoInputs | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoBringToFrontOnFocus;
 
 #ifdef IMGUI_HAS_VIEWPORT
       ImGui::SetNextWindowSize(ImGui::GetMainViewport()->Size);
